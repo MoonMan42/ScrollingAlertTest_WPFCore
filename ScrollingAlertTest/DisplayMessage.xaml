@@ -5,9 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ScrollingAlertTest"
         mc:Ignorable="d"
+        WindowStyle="None"
         WindowStartupLocation="CenterScreen"
-        Title="DisplayMessage" Height="80" Width="1920">
-    
+        Title="DisplayMessage" Height="75" Width="1920">
+
+    <StackPanel>
     <StackPanel Orientation="Horizontal" x:Name="stack" >
         <StackPanel.Resources>
             <local:NegatingConverter x:Key="NegatingConverter" />
@@ -30,9 +32,10 @@
             </EventTrigger>
         </StackPanel.Triggers>
         <Canvas x:Name="canvas" Width="{Binding ActualWidth, ElementName=stack}">
-            <TextBlock Text="{Binding Message}" FontSize="25"  x:Name="txtKron" Canvas.Left="0"/>
+                <TextBlock Text="{Binding Message}" FontSize="25"  x:Name="txtKron" Canvas.Left="0"/>
             <TextBlock Text="{Binding Text, ElementName=txtKron}" FontSize="25" Canvas.Left="{Binding Width, ElementName=canvas}"/>
         </Canvas>
     </StackPanel>
-
+        <Button HorizontalAlignment="right" Content="X" Background="LightGray" BorderThickness="0" FontSize="35" FontFamily="Segoe UI" Click="Close_Message" Padding="20"/>
+    </StackPanel>
 </Window>

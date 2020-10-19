@@ -24,8 +24,17 @@ namespace ScrollingAlertTest
 
             txtKron.Text = msg;
         }
+
+        private void Close_Message(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
     }
 
+
+    /// <summary>
+    /// https://stackoverflow.com/questions/15323163/wpf-marquee-text-animation
+    /// </summary>
     public class NegatingConverter : IValueConverter
     {
 
